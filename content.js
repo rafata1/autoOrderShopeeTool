@@ -2,7 +2,7 @@ function clickBtnByText(str) {
     return new Promise((resolve, reject) => {
         const btns = document.querySelectorAll("button")
         for (let i = 0; i < btns.length; i++) {
-            if (btns[i].innerHTML.includes(str)) {
+            if (btns[i].innerHTML.includes(str) && !btns[i].className.includes("disabled")) {
                 btns[i].click()
                 console.log(str)
                 resolve(true)
@@ -20,7 +20,7 @@ function sleep(ms) {
 }
 
 async function orderProcess() {
-    await tryUntil(async () => await clickBtnByText("Size 24"))
+    await tryUntil(async () => await clickBtnByText("V1 LIMITED + HỘP JJK"))
     await sleep(500)
     await tryUntil(async () => await clickBtnByText("Mua ngay"))
     await sleep(3000)
