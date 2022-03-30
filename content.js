@@ -33,8 +33,7 @@ async function orderProcess() {
 const tryUntil = async (fn) => {
     while (true) {
         const time = new Date()
-        console.log(time.getTime() > new Date("2022-3-30 16:48:00"))
-        if (time.getTime() > new Date("2022-3-30 16:48:00")) {
+        if (time.getTime() > new Date("2022-3-30 19:59:59")) {
             const success = await fn()
             if (success) {
                 break;
