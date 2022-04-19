@@ -21,13 +21,13 @@ function sleep(ms) {
 
 async function orderProcess() {
     console.log("starting buying process")
-    await sleep(3000)
+    await sleep(2000)
     await tryUntil(async () => await clickBtnByText("Mua ngay"))
-    await sleep(3000)
+    await sleep(2000)
     await tryUntil(async () => await clickBtnByText("Mua hàng"))
-    await sleep(3000)
+    await sleep(2000)
     await tryUntil(async () => await clickBtnByText("Thanh toán khi nhận hàng"))
-    await sleep(3000)
+    await sleep(2000)
     await tryUntil(async () => await clickBtnByText("Đặt hàng"))
 }
 
