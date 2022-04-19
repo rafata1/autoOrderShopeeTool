@@ -20,33 +20,22 @@ function sleep(ms) {
 }
 
 async function orderProcess() {
-    // await tryUntil(async () => await clickBtnByText("V1 LIMITED + HỘP JJK"))
-    // await sleep(500)
-    while (true) {
-        const time = new Date()
-        if (time.getTime() > new Date("2022-4-19 14:58:59")) {
-            console.log("waiting for reload")
-            location.reload()
-            break
-        }
-    }
     console.log("starting buying process")
+    await sleep(3000)
     await tryUntil(async () => await clickBtnByText("Mua ngay"))
     await sleep(3000)
     await tryUntil(async () => await clickBtnByText("Mua hàng"))
     await sleep(3000)
     await tryUntil(async () => await clickBtnByText("Thanh toán khi nhận hàng"))
+    await sleep(3000)
     await tryUntil(async () => await clickBtnByText("Đặt hàng"))
 }
 
 const tryUntil = async (fn) => {
     while (true) {
-        const time = new Date()
-        if (time.getTime() > new Date("2022-4-19 19:59:59")) {
-            const success = await fn()
-            if (success) {
-                break;
-            }
+        const success = await fn()
+        if (success) {
+            break;
         }
         await sleep(100)
     }
