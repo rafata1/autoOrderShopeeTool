@@ -23,6 +23,7 @@ async function orderProcess() {
     // await tryUntil(async () => await clickBtnByText("V1 LIMITED + HỘP JJK"))
     // await sleep(500)
     while (true) {
+        const time = new Date()
         if (time.getTime() > new Date("2022-4-19 14:58:59")) {
             console.log("waiting for reload")
             location.reload()
